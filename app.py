@@ -15,7 +15,7 @@ TMDB_API_KEY = '6cde659ecb5e362ef41ac1d4ff221ddd'  # Define the TMDB API key
 # Fetch movies from TMDb
 def fetch_movies_from_tmdb():
     movies = []  # Initialize an empty list to store movie data
-    for page in range(1, 6):  # Loop through the first 5 pages of popular movies
+    for page in range(1, 2):  # Loop through the first 5 pages of popular movies
         url = f'https://api.themoviedb.org/3/movie/popular?api_key={TMDB_API_KEY}&language=en-US&page={page}'  # Define the URL for fetching popular movies
         response = requests.get(url)  # Send an HTTP GET request to the URL
         data = response.json()  # Parse the response as JSON
@@ -63,7 +63,7 @@ def get_content_based_recommendations(movie_id, cosine_sim=cosine_sim):
 # Fetch ratings for collaborative filtering
 def fetch_ratings():
     ratings = []  # Initialize an empty list to store rating data
-    for page in range(1, 6):  # Loop through the first 5 pages of top-rated movies
+    for page in range(1, 2):  # Loop through the first 5 pages of top-rated movies
         url = f'https://api.themoviedb.org/3/movie/top_rated?api_key={TMDB_API_KEY}&language=en-US&page={page}'  # Define the URL for fetching top-rated movies
         response = requests.get(url)  # Send an HTTP GET request to the URL
         data = response.json()  # Parse the response as JSON
